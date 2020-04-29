@@ -1,68 +1,128 @@
 'use strict';
 
-// store quiz
-const quizContent = {
-  intro: "this dynamic text is introducing you to the quiz",
-  questions: [{
-    question: "what is the meaning of life",
-    answers: [{
-      answer: "42",
-      isCorrect: true
-    }, {
-      answer: "42",
-      isCorrect: false
-    }, {
-      answer: "29",
-      isCorrect: false
-    }, {
-      answer: "50",
-      isCorrect: false
-    }, {
-      answer: "93",
-      isCorrect: false
-    }],
-  }, {
-    question: "why am I building this?",
-    answers: [{
-      answer: "sunitha told me to",
-      isCorrect: true
-    }, {
-      answer: "sunitha told me to",
-      isCorrect: true
-    }, {
-      answer: "sunitha told me to",
-      isCorrect: true
-    }, {
-      answer: "sunitha told me to",
-      isCorrect: true
-    }, {
-      answer: "sunitha told me to",
-      isCorrect: true
-    }, {
-      answer: "sunitha told me to",
-      isCorrect: true
-    }]
-  }],
-  outro: "this dynamic text is thanking you for doing the quiz"
-};
+let pageNumber = 0;
+let questionNumber = 0;
+let quizLength = (quiz.quizContent.questions.length * 2) + 1;
+let score = 0;
+let answer = null;
 
-// Renders the quiz to the page
-function paginate() {
-  console.log(Object.keys(quizContent).length);
+
+function handleButton() {
+  answer = false;
+  $("#quizForm").submit(function(event) {
+    event.preventDefault();
+    $.each($("input[name='answer']:checked"), function() {
+      answer = $(this).val();
+
+    });
+    if (!answer && pageNumber >= 1){
+
+    } else {
+      console.log(answer);
+    incrementPage();
+    }
+  });
 }
 
-function questionNumber() {
-  console.log('questionNumber: ran');
+function checkAnswer() {
+  let rightAnswer = quiz.quizContent.questions[questionNumber].answers.find(element => element.isCorrect == true);
+  if (answer == rightAnswer.answer) {
+    score += 1;
+    $(".happyFace").addClass('animate');
+  } else if (pageNumber < 1) {
+    console.log("quiz page")
+  } else if (!answer) {
+    console.log("no answer")
+  } else {
+    $(".sadFace").addClass('animate');
+    console.log(`you got the wrong answer`);
+  }
 }
 
-function totalQuestions() {
-  console.log('totalQuestions: ran');
+function incrementPage() {
+  pageNumber += 1
+  chooseContent();
+}
+
+function incrementQuestion() {
+  questionNumber += 1
+}
+
+function chooseContent() {
+  if (pageNumber == 0) {
+    displayIntro();
+    console.log(pageNumber);
+  } else if (pageNumber == quizLength) {
+    displayOutro();
+        console.log(pageNumber);
+  } else if ((pageNumber - 1) % 2 == 0) {
+    displayQuestions();
+    displayAnswers();
+        console.log(pageNumber);
+  } else {
+    checkAnswer();
+    displayResults();
+        console.log(pageNumber);
+  }
+}
+
+function displayIntro() {
+  $(".quizTitle").html(quiz.quizTitle);
+  $(".score").html(`${score} / ${quiz.quizContent.questions.length}`);
+  $(".quizIntro").html(quiz.quizContent.intro);
+  $(".questionNumber").html(`There are ${quiz.quizContent.questions.length} questions in this quiz`);
+  $(".submit").prop('value', 'Start');
+}
+
+function displayQuestions() {
+  $(".quizIntro").hide();
+  $(".scoreBox").show();
+  $(".quizTitle").hide();
+  $(".questionNumber").hide();
+  $(".score").html(`${score} / ${quiz.quizContent.questions.length}`);
+  $(".question").html(quiz.quizContent.questions[questionNumber].question);
+  $(".happyFace").removeClass('animate');
+  $(".sadFace").removeClass('animate');
+}
+
+function displayAnswers() {
+  let answerThing = quiz.quizContent.questions[questionNumber].answers.reduce((result, item, index) => {
+    result += `<input type="radio" id="${index}" name="answer" value="${item.answer}">
+    <label for="${index}">${item.answer}</label>`;
+    return result;
+  }, '');;
+  answerThing += `
+  <input class="submit" type="submit" value="Submit">`;
+  $("#quizForm").html(answerThing);
+  answer = null;
+}
+
+function displayResults() {
+  $(".score").html(`${score} / ${quiz.quizContent.questions.length}`);
+  $(".submit").prop('value', 'Next Question');
+  incrementQuestion();
+}
+
+function displayOutro() {
+  $(".quizTitle").show();
+  $(".quizTitle").html("The End");
+  $(".quizIntro").show();
+  $(".quizIntro").html(quiz.quizContent.outro);
+  $(".questionNumber").html(`You scored X out of ${quiz.quizContent.questions.length} questions in this quiz`);
+  $(".score").html(`${score} / ${quiz.quizContent.questions.length}`);
+  $(".question").html("");
+  $("#quizForm").html(`<form action="./404.html" id="quizForm">
+      <input class="submit" type="submit" value="Restart">
+    </form>`);
+  pageNumber = -1;
+  questionNumber = 0;
+  score = 0;
+  answer = null;
 }
 
 function runTheQuiz() {
-  paginate();
-  questionNumber();
-  totalQuestions();
+  handleButton();
+  chooseContent();
 }
 
 $(runTheQuiz);
