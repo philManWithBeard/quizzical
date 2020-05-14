@@ -35,7 +35,9 @@ function checkAnswer() {
     console.log("no answer")
   } else {
     $(".sadFace").addClass('animate');
-    console.log(`you got the wrong answer`);
+    $("#quizForm").html(`<div class ="wrong">${rightAnswer.answer} is the answer</div>
+      <input class="submit" type="submit" value="Submit">
+      `);
   }
 }
 
