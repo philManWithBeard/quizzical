@@ -18,7 +18,6 @@ function handleButton() {
     if (!answer && pageNumber >= 1){
 
     } else {
-      console.log(answer);
     incrementPage();
     }
   });
@@ -30,9 +29,7 @@ function checkAnswer() {
     score += 1;
     $(".happyFace").addClass('animate');
   } else if (pageNumber < 1) {
-    console.log("quiz page")
   } else if (!answer) {
-    console.log("no answer")
   } else {
     $(".sadFace").addClass('animate');
     $("#quizForm").html(`<div class ="wrong">${rightAnswer.answer} is the answer</div>
@@ -53,18 +50,14 @@ function incrementQuestion() {
 function chooseContent() {
   if (pageNumber == 0) {
     displayIntro();
-    console.log(pageNumber);
   } else if (pageNumber == quizLength) {
     displayOutro();
-        console.log(pageNumber);
   } else if ((pageNumber - 1) % 2 == 0) {
     displayQuestions();
     displayAnswers();
-        console.log(pageNumber);
   } else {
     checkAnswer();
     displayResults();
-        console.log(pageNumber);
   }
 }
 
