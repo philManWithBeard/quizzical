@@ -6,4 +6,7 @@ For all screensizes down to 400px width
 
 No support is offered on this project and it is not maintained
 
-Unit testing and an Express backend will be added after I complete the bootcamp
+Roadmap:
+- Unit testing
+- Express backend 
+- Ability to deal with html charset
