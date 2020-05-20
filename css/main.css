@@ -26,7 +26,6 @@
 }
 
 .happyFace {
-  display: hidden;
   position: relative;
   float: right;
   right: 5px;
@@ -42,7 +41,6 @@
 }
 
 .sadFace {
-  display: hidden;
   position: relative;
   float: right;
   right: -45px;
@@ -143,17 +141,21 @@ h2, h3, p {
   padding: 40px;
 }
 
-form#quizForm input[type="radio"] {
-  opacity: 0;
-  position: fixed;
-  width: 0;
+#quizForm input[type="radio"] {
+  position: absolute !important;
+   height: 1px;
+   width: 1px;
+   overflow: hidden;
+   clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+   clip: rect(1px, 1px, 1px, 1px);
+   white-space: nowrap; /* added line */
 }
 
 .jsHidden {
   display: none;
 }
 
-form#quizForm label {
+#quizForm label {
   display: inline-block;
   background-color: #06D6A0;
   padding: 10px;
@@ -163,20 +165,20 @@ form#quizForm label {
   margin: 0px 5px 18px 0px;
 }
 
-form#quizForm input[type="radio"]:checked+label {
+#quizForm input[type="radio"]:checked+label {
   background-color: #bfb;
   border-color: #4c4;
 }
 
-form#quizForm input[type="radio"]:focus+label {
+#quizForm input[type="radio"]:focus+label {
   background-color: #dfd;
 }
 
-form#quizForm label:hover, #quizForm label:checked {
+#quizForm label:hover, #quizForm label:checked {
   background-color: #dfd;
 }
 
-form#quizForm label:active {
+#quizForm label:active {
   background-color: #dfd;
 }
 
@@ -187,69 +189,4 @@ input.submit {
   color: #FFD166;
   border-style: none;
   padding: 10px;
-}
-
-/*
- * Remove text-shadow in selection highlight:
- * https://twitter.com/miketaylr/status/12228805301
- *
- * Vendor-prefixed and regular ::selection selectors cannot be combined:
- * https://stackoverflow.com/a/16982510/7133471
- *
- * Customize the background color to match your design.
- */
-::-moz-selection {
-  background: #b3d4fc;
-  text-shadow: none;
-}
-
-::selection {
-  background: #b3d4fc;
-  text-shadow: none;
-}
-
-/*
- * A better looking default horizontal rule
- */
-hr {
-  display: block;
-  height: 1px;
-  border: 0;
-  border-top: 1px solid #ccc;
-  margin: 1em 0;
-  padding: 0;
-}
-
-/*
- * Remove the gap between audio, canvas, iframes,
- * images, videos and the bottom of their containers:
- * https://github.com/h5bp/html5-boilerplate/issues/440
- */
-audio,
-canvas,
-iframe,
-img,
-svg,
-video {
-  vertical-align: middle;
-}
-
-/*
- * Remove default fieldset styles.
- */
-fieldset {
-  border: 0;
-  margin: 0;
-  padding: 0;
-}
-
-/*
- * Allow only vertical resizing of textareas.
- */
-textarea {
-  resize: vertical;
-}
-
-@media only screen and (min-width: 35em) {
-  /* Style adjustments for viewports that meet the condition */
 }
