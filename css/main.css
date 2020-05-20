@@ -1,18 +1,11 @@
-/*! HTML5 Boilerplate v7.3.0 | MIT License | https://html5boilerplate.com/ */
-/* main.css 2.0.0 | MIT License | https://github.com/h5bp/main.css#readme */
-/*
- * What follows is the result of much research on cross-browser styling.
- * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
- * Kroc Camen, and the H5BP dev community and team.
- */
-/* ==========================================================================
-   Base styles: opinionated defaults
-   ========================================================================== */
-/**
-    * ----------------------------------------
-    * animation rotate-bl
-    * ----------------------------------------
-    */
+
+
+
+@media only screen and (max-width:25em) {
+	.logo {
+    display: none;
+  }
+}
 @keyframes rotate-bl {
   0% {
     transform: rotate(270deg);
@@ -49,7 +42,7 @@
   opacity: 0;
 }
 
-.wrong {
+.wrong, .right {
   display: inline-block;
   background-color: #06D6A0;
   padding: 10px;
@@ -98,6 +91,7 @@ html {
 
 header {
   margin-bottom: 20px;
+  flex-wrap: wrap;
   display: flex;
   flex-direction: row;
   align-items: flex-end;

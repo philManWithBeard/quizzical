@@ -65,12 +65,13 @@ function displayIntro() {
 function displayQuestions() {
   $('.quizIntro').hide()
   $('.scoreBox').show()
-  $('.quizTitle').html(`Question ${questionNumber + 1}`)
+  $('.quizTitle').html(`Question: ${quiz.quizContent.questions.length}`)
   $('.questionNumber').hide()
-  $('.score').html(`${questionNumber} / ${quiz.quizContent.questions.length}`)
+  $('.score').html(`${score} / ${quiz.quizContent.questions.length}`)
   $('.question').html(quiz.quizContent.questions[questionNumber].question)
   $('.happyFace').removeClass('animate')
   $('.sadFace').removeClass('animate')
+  console.log(score);
 }
 
 function displayAnswers() {
