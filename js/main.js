@@ -71,7 +71,6 @@ function displayQuestions() {
   $('.question').html(quiz.quizContent.questions[questionNumber].question)
   $('.happyFace').removeClass('animate')
   $('.sadFace').removeClass('animate')
-  console.log(score);
 }
 
 function displayAnswers() {
