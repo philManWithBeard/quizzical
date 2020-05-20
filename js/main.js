@@ -65,7 +65,7 @@ function displayIntro() {
 function displayQuestions() {
   $('.quizIntro').hide()
   $('.scoreBox').show()
-  $('.quizTitle').html(`Question: ${quiz.quizContent.questions.length}`)
+  $('.quizTitle').html(`Question: ${questionNumber + 1}`)
   $('.questionNumber').hide()
   $('.score').html(`${score} / ${quiz.quizContent.questions.length}`)
   $('.question').html(quiz.quizContent.questions[questionNumber].question)
