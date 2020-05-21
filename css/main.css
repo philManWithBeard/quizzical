@@ -42,7 +42,18 @@
   opacity: 0;
 }
 
-.wrong, .right {
+.wrong {
+  display: inline-block;
+  background-color: #FFD166;
+  color: #EF476F;
+  padding: 10px;
+  font-family: sans-serif, Arial;
+  font-size: 16px;
+  border-style: none;
+  margin: 0px 5px 18px 0px;
+}
+
+.right {
   display: inline-block;
   background-color: #06D6A0;
   padding: 10px;

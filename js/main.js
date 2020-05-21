@@ -22,10 +22,13 @@ function checkAnswer() {
   const rightAnswer = quiz.quizContent.questions[questionNumber].answers.find(element => element.isCorrect === true)
   if (answer === rightAnswer.answer) {
     score += 1
+    $('#quizForm').html(`<div class ='right'>Right, ${rightAnswer.answer} is the answer</div>
+      <input class='submit' type='submit' value='Submit'>
+      `)
     $('.happyFace').addClass('animate')
   } else if (pageNumber > 0 && answer !== false) {
     $('.sadFace').addClass('animate')
-    $('#quizForm').html(`<div class ='wrong'>${rightAnswer.answer} is the answer</div>
+    $('#quizForm').html(`<div class ='wrong'>Wrong, ${rightAnswer.answer} is the answer</div>
       <input class='submit' type='submit' value='Submit'>
       `)
   }
