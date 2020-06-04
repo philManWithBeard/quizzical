@@ -1,0 +1,111 @@
+
+
+.positionLeft {
+  display: block;
+  color: #FFD166;
+  position: relative;
+  right: 65px;
+  bottom: 40px;
+  z-index: 2;
+}
+
+.hidingBox {
+  display: block;
+  position: relative;
+  float: right;
+  color: #FFD166;
+  height: 150px;
+  width: 0px;
+  right: -50px;
+  z-index: 3;
+}
+
+html {
+  color: #222;
+  background-color: white;
+  font-size: 1em;
+  line-height: 1.4;
+  font-family: 'Varela Round', sans-serif;
+  padding: 40px;
+  max-width: 600px;
+  margin: auto;
+}
+
+header {
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  margin: 20px 0px 19px 0px;
+}
+
+.scoreBox {
+  background-color: black;
+  padding: 20px;
+  box-sizing: border-box;
+  color: white;
+  margin: 0px 0px 0px 0px;
+  width: fit-content;
+}
+
+.scoreBox h4 {
+  margin: 0px;
+  text-align: center;
+}
+
+h1 {
+  color: black;
+  display: inline-block;
+  margin: 0px 0px 0px 10px;
+}
+
+h2, h3, p {
+  margin: 0px 0px 18px 0px;
+}
+
+.quiz {
+  background-color: black;
+  color: white;
+  padding: 40px;
+}
+
+#quizForm input[type="radio"] {
+  position: absolute !important;
+   height: 1px;
+   width: 1px;
+   overflow: hidden;
+   clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+   clip: rect(1px, 1px, 1px, 1px);
+   white-space: nowrap; /* added line */
+}
+
+.jsHidden {
+  display: none;
+}
+
+#quizForm label {
+  display: inline-block;
+  background-color: #06D6A0;
+  padding: 10px;
+  font-family: sans-serif, Arial;
+  font-size: 16px;
+  border-style: none;
+  margin: 0px 5px 18px 0px;
+}
+
+input.submit {
+  margin: 0px;
+  display: block;
+  background-color: white;
+  color: black;
+  border-style: none;
+  padding: 10px;
+}
