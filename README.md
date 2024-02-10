@@ -2,24 +2,28 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-### Description
+## Description
 A quiz app built in jquery. Takes questions via JSON.
 
 ### Table of Contents
 - [Installation](#installation)
 - [License](#license)
 - [Contributing](#contributing)
+- [Preview](#preview)
 - [Questions](#questions)
 
-### Installation
+## Installation
 Designed to be cloned to a local directory and accessed via a browser file:///∗clonedirectory∗/quizzical/index.html (replace ∗clonedirectory∗ with the path to your local folder)
 
-### License
+## License
 MIT
 
-### Contributing
+## Contributing
 Flag an issue
 
-### Questions
+## Preview
+![Preview Image for App](https://raw.githubusercontent.com/philManWithBeard/quizzical/master/quizzical.png)
+
+## Questions
 - [See my Github](https://www.github.com/philManWithBeard)
 - Email: phil@fullystacked.io
