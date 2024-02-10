@@ -1,14 +1,25 @@
-<h1>A jquery frontend quiz app completed for the bloc.io bootcamp</h1>
+# Quizzical
 
-Designed to be cloned to a local directory  and accessed via a browser file:///&#8727;clonedirectory&#8727;/quizzical/index.html (replace &#8727;clonedirectory&#8727; with the path to your local folder)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-For all screensizes down to 400px width
+### Description
+A quiz app built in jquery. Takes questions via JSON.
 
-No support is offered on this project and it is not maintained
+### Table of Contents
+- [Installation](#installation)
+- [License](#license)
+- [Contributing](#contributing)
+- [Questions](#questions)
 
-Roadmap:
-<ul>
-  <li>Unit testing</li>
-  <li>Express backend</li>
-  <li>Ability to deal with html charset</li>
-</ul>
+### Installation
+Designed to be cloned to a local directory and accessed via a browser file:///∗clonedirectory∗/quizzical/index.html (replace ∗clonedirectory∗ with the path to your local folder)
+
+### License
+MIT
+
+### Contributing
+Flag an issue
+
+### Questions
+- [See my Github](https://www.github.com/philManWithBeard)
+- Email: phil@fullystacked.io
